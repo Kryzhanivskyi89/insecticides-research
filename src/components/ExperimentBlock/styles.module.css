@@ -1,0 +1,60 @@
+.container {
+  border: 1px solid #dce1e7;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background-color: #f9fbfd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1d3557;
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inputRow input[type="number"],
+.inputRow input[type="text"] {
+  width: 60px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.inputRow input[type="text"] {
+  width: 80px;
+}
+
+.beforeLabel,
+.dayLabel {
+  font-weight: 500;
+  color: #2f3e46;
+  margin-top: 8px;
+  display: block;
+}
+
+.addButton {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #1d3557;
+}

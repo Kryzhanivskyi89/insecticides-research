@@ -1,0 +1,66 @@
+.tableWrapper {
+  margin-top: 24px;
+  overflow-x: auto;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+}
+
+.table th {
+  background-color: #e0e5ec;
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+  border: 1px solid #c5cbd3;
+}
+
+.table td {
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #d2d8e0;
+}
+
+.conclusionBlock {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.conclusionLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.conclusionInput {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  box-sizing: border-box;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.conclusionInput:focus {
+  border-color: #6c63ff;
+  outline: none;
+  background-color: #fefefe;
+}
+

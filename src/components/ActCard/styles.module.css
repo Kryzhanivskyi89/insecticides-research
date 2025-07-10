@@ -1,0 +1,33 @@
+
+
+.samplesBlock {
+  margin-top: 8px;
+}
+
+.samplesList {
+  padding-left: 16px;
+  margin: 4px 0;
+}
+
+.viewLink {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+}
+
+.card {
+  background: black;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: grab;
+}
+
+.viewLink {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}

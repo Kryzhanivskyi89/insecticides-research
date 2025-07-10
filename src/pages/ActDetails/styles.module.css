@@ -1,0 +1,70 @@
+.actDetails {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.actDetails h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.actDetails h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2980b9;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.actDetails p {
+  margin: 0.4rem 0;
+}
+
+.actDetails ul {
+  padding-left: 1.2rem;
+  margin: 0.4rem 0;
+}
+
+.actDetails li {
+  margin-bottom: 0.3rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.backLink:hover {
+  background: #2980b9;
+}
+
+.samplesBlock {
+  background-color: #f9f9f9;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.samplesList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.samplesList li {
+  font-size: 0.95rem;
+}

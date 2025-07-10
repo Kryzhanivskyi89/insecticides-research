@@ -1,0 +1,46 @@
+nav {
+  background-color: #f5f7fa;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav ul li {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav ul li a,
+nav ul li button {
+  color: #007bff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+  background-color: #e0f0ff;
+  color: #0056b3;
+  text-decoration: none;
+}
+
+nav ul li button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
