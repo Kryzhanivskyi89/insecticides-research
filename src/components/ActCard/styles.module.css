@@ -1,33 +1,50 @@
 
-
-.samplesBlock {
-  margin-top: 8px;
+.card {
+  background: rgb(71, 69, 69);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  transition: box-shadow 0.2s ease;
 }
 
-.samplesList {
-  padding-left: 16px;
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card p {
   margin: 4px 0;
 }
 
-.viewLink {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
+.samplesBlock {
+  margin-top: 10px;
 }
 
-.card {
-  background: black;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  cursor: grab;
+.samplesBlock p {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.samplesList {
+  list-style: none;
+  padding-left: 18px;
+  margin: 0;
+  color: #d5cbcb;
+}
+
+.samplesList li {
+  margin-bottom: 2px;
+  font-size: 0.82rem;
 }
 
 .viewLink {
   text-decoration: none;
-  color: blue;
-  font-weight: bold;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.2s;
 }

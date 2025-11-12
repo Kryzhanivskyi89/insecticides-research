@@ -34,7 +34,6 @@ const Dashboard = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = res.data;
-        console.log("Отримані акти:", data);
 
         // Розбиваємо акти по статусах
         const grouped = {
@@ -114,7 +113,7 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboard}>
-      <h2>Канбан-дошка актів</h2>
+      <h2 className={styles.dashboardTitle}>Канбан-дошка актів</h2>
        <div className={styles.header}>
          <h2>📋 Список актів</h2>
         <Link to="/new-act" className={styles.addButton}>
@@ -161,87 +160,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-// import React, { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
-
-// import API from "../../redux/api/axios";
-// import styles from "./styles.module.css";
-
-// const Dashboard = () => {
-//   const [acts, setActs] = useState([]);
-//   const { token } = useSelector((state) => state.auth);
-
-//   useEffect(() => {
-//     const fetchActs = async () => {
-//       try {
-//        const res = await API.get("/api/acts", {
-//   headers: { Authorization: `Bearer ${token}` },
-// });
-// const data = res.data; 
-// console.log("отримані дані:", data); // Додай це!
-// setActs(data);
-//         setActs(data);
-//       } catch (err) {
-//         console.error("Помилка при отриманні актів:", err);
-//       }
-//     };
-
-//     fetchActs();
-//   }, [token]);
-
-//   return (
-//     <div className={styles.dashboard}>
-//       <div className={styles.header}>
-//         <h2>📋 Список актів</h2>
-//         <Link to="/new-act" className={styles.addButton}>
-//           ➕ Новий акт
-//         </Link>
-//       </div>
-
-//       <table className={styles.table}>
-//         <thead>
-//           <tr>
-//             <th>№ акту</th>
-//             <th>Дата</th>
-//             <th>Статус</th>
-//             <th>Автор</th>
-//             <th></th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {acts.length === 0 ? (
-//             <tr>
-//               <td colSpan="5" style={{ textAlign: "center" }}>
-//                 Немає записів
-//               </td>
-//             </tr>
-//           ) : (
-//             acts.map((act) => (
-//               <tr key={act._id}>
-//                 <td>{act.actNumber || "—"}</td>
-//                 <td>
-//                   {act.actDate
-//                     ? new Date(act.actDate).toLocaleDateString()
-//                     : "—"}
-//                 </td>
-//                 <td className={styles[`status_${act.status}`]}>
-//                   {act.status || "—"}
-//                 </td>
-//                 <td>{act.createdBy?.name || "невідомо"}</td>
-//                 <td>
-//                   <Link to={`/act/${act._id}`} className={styles.viewLink}>
-//                     🔍 Переглянути
-//                   </Link>
-//                 </td>
-//               </tr>
-// ))
-//           )}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;

@@ -1,9 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-
 import styles from "./styles.module.css";
-import { logout } from "../../redux/auth/authSlice"; // шляху залежно від твоєї структури
+import { logout } from "../../redux/auth/authSlice"; 
 
 const NavBar = () => {
   const dispatch = useDispatch();

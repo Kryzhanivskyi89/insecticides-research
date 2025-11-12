@@ -1,3 +1,12 @@
+.title {
+
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
 .tableWrapper {
   margin-top: 24px;
   overflow-x: auto;

@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://insecticides-research-backend.onrender.com",
+  baseURL: "http://localhost:3005",
+  // baseURL: "https://insecticides-research-backend.onrender.com",
 });
 
 API.interceptors.request.use((config) => {

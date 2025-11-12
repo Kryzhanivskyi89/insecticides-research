@@ -1,0 +1,171 @@
+
+.section {
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.samplesInfoBlock {
+   display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #dce1e7;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #f9fbfd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sampleCardTitle {
+  text-align: center;
+}
+
+.sampleCardDisplay {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.editButton {
+  background-color: #1976d2;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #d32f2f;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* src/components/EditableSamplesInfo/styles.module.css */
+
+.editableSamples {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.sampleEditCard {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.sampleEditCard h4 {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroup label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.85rem;
+}
+
+.fieldGroup input,
+.fieldGroup select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.fieldGroup input:focus,
+.fieldGroup select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.removeSample {
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.removeSample:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.removeSample:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.addSample {
+  width: 100%;
+  padding: 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.addSample:hover {
+  background: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .editForm {
+    grid-template-columns: 1fr;
+  }
+}

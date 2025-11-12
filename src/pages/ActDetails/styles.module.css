@@ -1,70 +1,71 @@
-.actDetails {
-  padding: 2rem;
-  max-width: 800px;
+
+.detailsContainer {
+  padding: 30px;
+  max-width: 1400px; 
   margin: 0 auto;
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #333;
+  background-color: gray; 
+  border-radius: 10px;
 }
 
-.actDetails h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+h1 {
+  text-align: center;
   color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 2em;
+  font-weight: 700;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 15px;
 }
 
-.actDetails h3 {
-  font-size: 1.3rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  color: #2980b9;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 4px;
+.saveContainer {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.actDetails p {
-  margin: 0.4rem 0;
-}
-
-.actDetails ul {
-  padding-left: 1.2rem;
-  margin: 0.4rem 0;
-}
-
-.actDetails li {
-  margin-bottom: 0.3rem;
-}
-
-.backLink {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.5rem 1rem;
-  background: #3498db;
+.saveButton {
+  background-color: #28a745;
   color: white;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.2s ease;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.backLink:hover {
-  background: #2980b9;
+.saveButton:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-2px);
 }
 
-.samplesBlock {
-  background-color: #f9f9f9;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
+.saveButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
 
-.samplesList {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.saveSuccessMessage, .saveErrorMessage {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.samplesList li {
-  font-size: 0.95rem;
+.saveSuccessMessage {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.saveErrorMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }

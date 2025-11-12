@@ -1,5 +1,3 @@
-
-// src/components/EditableGeneralInfo/EditableGeneralInfo.jsx
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
@@ -15,21 +13,14 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
     description: ""
   });
 
-  // Ініціалізація ОДИН РАЗ
   useEffect(() => {
-    if (initialData && Object.keys(initialData).length > 0) {
-      setForm({
-        actNumber: initialData.actNumber || "",
-        year: initialData.year || new Date().getFullYear(),
-        actDate: initialData.actDate ? initialData.actDate.split('T')[0] : "",
-        receivedDate: initialData.receivedDate ? initialData.receivedDate.split('T')[0] : "",
-        transferredBy: initialData.transferredBy || "",
-        executor: initialData.executor || "",
-        status: initialData.status || "todo",
-        description: initialData.description || ""
-      });
+    if (initialData) {
+      setForm(prev => ({
+        ...prev,
+        ...initialData
+      }));
     }
-  }, []); // Пуста залежність - ініціалізується тільки один раз
+  }, [initialData]);
 
   const handleChange = (field, value) => {
     const updated = { ...form, [field]: value };
@@ -38,7 +29,7 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
   };
 
   return (
-    <div className={styles.form}>
+    <div className={styles.editForm}>
       <div className={styles.fieldGroup}>
         <label>Номер акту</label>
         <input
@@ -64,7 +55,7 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
         <label>Дата акту</label>
         <input
           type="date"
-          value={form.actDate}
+          value={form.actDate ? form.actDate.split('T')[0] : ''}
           onChange={(e) => handleChange("actDate", e.target.value)}
         />
       </div>
@@ -73,7 +64,7 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
         <label>Дата надходження</label>
         <input
           type="date"
-          value={form.receivedDate}
+          value={form.receivedDate ? form.receivedDate.split('T')[0] : ''}
           onChange={(e) => handleChange("receivedDate", e.target.value)}
         />
       </div>
@@ -102,10 +93,10 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
           value={form.status}
           onChange={(e) => handleChange("status", e.target.value)}
         >
+          {/* Виправлено значення, щоб відповідати логіці канбан-дошки */}
           <option value="todo">До виконання</option>
-          <option value="in_progress">В процесі</option>
-          <option value="completed">Завершено</option>
-          <option value="cancelled">Скасовано</option>
+          <option value="inProgress">В процесі</option>
+          <option value="done">Завершено</option>
         </select>
       </div>
 

@@ -45,6 +45,8 @@
 }
 
 .addButton {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 12px;
   padding: 6px 12px;
   background-color: #457b9d;

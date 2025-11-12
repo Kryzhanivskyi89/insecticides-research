@@ -1,7 +1,15 @@
 .dashboard {
   padding: 2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
 }
 
+.dashboardTitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2em;
+  font-weight: bold;
+}
 .header {
   display: flex;
   justify-content: space-between;
