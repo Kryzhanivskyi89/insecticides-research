@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/insecticides-research/static/css/main.a22a1bcd.css",
+    "main.js": "/insecticides-research/static/js/main.bda62cbd.js",
+    "static/js/977.ada11e2a.chunk.js": "/insecticides-research/static/js/977.ada11e2a.chunk.js",
+    "static/js/455.011af787.chunk.js": "/insecticides-research/static/js/455.011af787.chunk.js",
+    "index.html": "/insecticides-research/index.html",
+    "main.a22a1bcd.css.map": "/insecticides-research/static/css/main.a22a1bcd.css.map",
+    "main.bda62cbd.js.map": "/insecticides-research/static/js/main.bda62cbd.js.map",
+    "977.ada11e2a.chunk.js.map": "/insecticides-research/static/js/977.ada11e2a.chunk.js.map",
+    "455.011af787.chunk.js.map": "/insecticides-research/static/js/455.011af787.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a22a1bcd.css",
+    "static/js/main.bda62cbd.js"
+  ]
+}
