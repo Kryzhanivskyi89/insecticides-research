@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3005",
-  // baseURL: "https://insecticides-research-backend.onrender.com",
+  baseURL: process.env.REACT_APP_API_URL,
 });
+console.log("API URL:", process.env.REACT_APP_API_URL);
 
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");

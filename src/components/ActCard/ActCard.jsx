@@ -7,10 +7,8 @@ const ActCard = ({ act }) => {
   const layingDateRaw = act.experiment?.layingDate || "";
   const layingDate = layingDateRaw ? new Date(layingDateRaw).toLocaleDateString() : "—";
 
-  // Визначаємо, чи у samples є хоч один зразок з непорожнім name
   const hasValidSamples = act.samples && act.samples.some(s => s.name && s.name.trim() !== "");
 
-  // Вибираємо звідки брати зразки: з samples, якщо є валідні, інакше з experiment.samplesData
   const samples = hasValidSamples
     ? act.samples
     : act.experiment?.samplesData || [];

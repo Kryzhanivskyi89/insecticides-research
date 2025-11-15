@@ -1,75 +1,344 @@
-.title {
 
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #333;
-  text-align: center;
+
+.resultsTableWrapper {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-card-border);
+  animation: slideUp var(--duration-normal) var(--ease-standard);
 }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-20));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== TITLE ==================== */
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-24) 0;
+  color: var(--color-text);
+  text-align: center;
+  padding-bottom: var(--space-16);
+  border-bottom: 3px solid var(--color-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--font-family-base);
+}
+
+/* ==================== TABLE WRAPPER ==================== */
 
 .tableWrapper {
-  margin-top: 24px;
+  margin-top: var(--space-24);
   overflow-x: auto;
-  background-color: #fdfdfd;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-card-border);
 }
+
+.tableWrapper::-webkit-scrollbar {
+  height: var(--space-8);
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  background: rgba(var(--color-slate-500-rgb), 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-primary), 0.5);
+  border-radius: var(--radius-sm);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--color-primary), 0.8);
+}
+
+/* ==================== TABLE ==================== */
 
 .table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 14px;
-  color: #fff;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  background: var(--color-surface);
+  overflow: hidden;
+  border-radius: var(--radius-base);
 }
 
 .table th {
-  background-color: #e0e5ec;
-  padding: 8px;
+  background: linear-gradient(135deg, var(--color-slate-900), var(--color-charcoal-800));
+  padding: var(--space-16) var(--space-12);
   text-align: center;
-  font-weight: 600;
-  color: #000;
-  border: 1px solid #c5cbd3;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-cream-50);
+  border: 1px solid var(--color-charcoal-700);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: var(--font-size-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
 }
 
 .table td {
-  padding: 6px 8px;
+  padding: var(--space-12);
   text-align: center;
-  border: 1px solid #d2d8e0;
+  border: 1px solid var(--color-card-border);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
 }
 
+.table tbody tr {
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.table tbody tr:hover {
+  background-color: var(--color-secondary);
+  box-shadow: inset 0 0 var(--space-8) rgba(var(--color-teal-500-rgb), 0.1);
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--color-secondary);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background-color: var(--color-secondary-hover);
+}
+
+/* ==================== ROW STYLES ==================== */
+
+.rowControl {
+  background: var(--color-secondary);
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.rowControl td {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.rowSample {
+  background: var(--color-surface);
+}
+
+.rowSample:hover {
+  background-color: var(--color-secondary);
+}
+
+/* ==================== CELL ==================== */
+
+.cell {
+  padding: var(--space-12);
+  text-align: center;
+  vertical-align: middle;
+  font-size: var(--font-size-sm);
+}
+
+/* ==================== CONCLUSION BLOCK ==================== */
+
 .conclusionBlock {
-  margin-top: 2rem;
-  padding: 1rem;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  background-color: #fafafa;
+  margin-top: var(--space-32);
+  padding: var(--space-20);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .conclusionLabel {
   display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-family: var(--font-family-base);
 }
 
 .conclusionInput {
   width: 100%;
-  min-height: 100px;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  min-height: 120px;
+  padding: var(--space-16);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
   resize: vertical;
   box-sizing: border-box;
-  background-color: #fff;
-  transition: border-color 0.2s ease;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: all var(--duration-normal) var(--ease-standard);
+  line-height: var(--line-height-normal);
+}
+
+.conclusionInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.conclusionInput:hover {
+  border-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .conclusionInput:focus {
-  border-color: #6c63ff;
   outline: none;
-  background-color: #fefefe;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+  background-color: var(--color-surface);
 }
 
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1200px) {
+  .table {
+    font-size: var(--font-size-sm);
+  }
+
+  .table th {
+    padding: var(--space-10) var(--space-8);
+    font-size: var(--font-size-xs);
+  }
+
+  .table td {
+    padding: var(--space-8);
+    font-size: var(--font-size-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .resultsTableWrapper {
+    padding: var(--space-16);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-20);
+    padding-bottom: var(--space-12);
+  }
+
+  .tableWrapper {
+    padding: var(--space-12);
+    border-radius: var(--radius-base);
+  }
+
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  .table th {
+    padding: var(--space-8) var(--space-6);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0;
+  }
+
+  .table td {
+    padding: var(--space-8) var(--space-6);
+    font-size: var(--font-size-xs);
+  }
+
+  .cell {
+    font-size: var(--font-size-xs);
+  }
+
+  .conclusionBlock {
+    margin-top: var(--space-20);
+    padding: var(--space-16);
+  }
+
+  .conclusionLabel {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-10);
+  }
+
+  .conclusionInput {
+    min-height: 100px;
+    padding: var(--space-10);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .resultsTableWrapper {
+    padding: var(--space-12);
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-16);
+    padding-bottom: var(--space-10);
+  }
+
+  .tableWrapper {
+    padding: var(--space-8);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    font-size: var(--font-size-xs);
+    min-width: 600px;
+  }
+
+  .table th {
+    padding: var(--space-6) var(--space-4);
+    font-size: var(--font-size-xs);
+  }
+
+  .table td {
+    padding: var(--space-6) var(--space-4);
+    font-size: var(--font-size-xs);
+  }
+
+  .cell {
+    font-size: var(--font-size-xs);
+  }
+
+  .conclusionBlock {
+    margin-top: var(--space-16);
+    padding: var(--space-12);
+  }
+
+  .conclusionLabel {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-8);
+  }
+
+  .conclusionInput {
+    min-height: 80px;
+    padding: var(--space-8);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* ==================== ANIMATION ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.table tbody tr {
+  animation: fadeIn var(--duration-normal) var(--ease-standard);
+}

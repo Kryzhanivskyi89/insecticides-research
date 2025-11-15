@@ -1,62 +1,270 @@
-.container {
-  border: 1px solid #dce1e7;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 20px;
-  background-color: #f9fbfd;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+.pageContainer {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--space-32);
+  background-color: var(--color-background);
+  min-height: calc(100vh - 120px);
+  animation: fadeIn var(--duration-normal) var(--ease-standard);
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #1d3557;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.inputRow {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
+/* ==================== PAGE TITLE ==================== */
+
+.pageTitle {
+  text-align: center;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-32);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-.inputRow input[type="number"],
-.inputRow input[type="text"] {
-  width: 60px;
-  padding: 6px 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+/* ==================== FORM WRAPPER ==================== */
+
+.formWrapper {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-card-border);
 }
 
-.inputRow input[type="text"] {
-  width: 80px;
-}
-
-.beforeLabel,
-.dayLabel {
-  font-weight: 500;
-  color: #2f3e46;
-  margin-top: 8px;
-  display: block;
-}
 
 .addButton {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 12px;
-  padding: 6px 12px;
-  background-color: #457b9d;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-32);
+  background-color: var(--color-primary);
+  color: var(--color-btn-primary-text);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-base);
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--space-20);
+  position: relative;
+  overflow: hidden;
+}
+
+.addButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s var(--ease-standard);
+}
+
+.addButton:hover::before {
+  left: 100%;
 }
 
 .addButton:hover {
-  background-color: #1d3557;
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.addButton:active {
+  background-color: var(--color-primary-active);
+  transform: translateY(0);
+}
+
+.addButton:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+
+.buttonGroup {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.buttonGroup .addButton {
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .pageContainer {
+    padding: var(--space-24);
+  }
+
+  .formWrapper {
+    padding: var(--space-24);
+  }
+
+  .form {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-16);
+    padding: var(--space-20);
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+  }
+
+  .actTitle {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: var(--space-16);
+  }
+
+  .formWrapper {
+    padding: var(--space-20);
+    border-radius: var(--radius-base);
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    padding: var(--space-16);
+  }
+
+  /* .sampleCard {
+    padding: var(--space-16);
+  } */
+
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-24);
+  }
+
+  /* .actTitle,
+  .samplesTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-16);
+    padding-bottom: var(--space-12);
+  } */
+/* 
+  .inline {
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .inline > input,
+  .inline > select {
+    flex: 1;
+    width: 100%;
+  } */
+
+  .addButton {
+    width: 100%;
+    padding: var(--space-12) var(--space-24);
+    font-size: var(--font-size-base);
+  }
+
+  /* .addSample,
+  .removeSample {
+    padding: var(--space-10) var(--space-20);
+    font-size: var(--font-size-sm);
+  } */
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .buttonGroup .addButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: var(--space-12);
+  }
+
+  .formWrapper {
+    padding: var(--space-16);
+  }
+
+  /* .form {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    padding: var(--space-12);
+  } */
+
+  /* .sampleCard {
+    padding: var(--space-12);
+  } */
+
+  .pageTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-20);
+  }
+
+  /* .actTitle,
+  .samplesTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-8);
+  } */
+/* 
+  .fieldGroup label {
+    font-size: var(--font-size-xs);
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    padding: var(--space-10) var(--space-12);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-10);
+  }
+
+  .sampleCard select,
+  .sampleCard input[type="text"],
+  .sampleCard input[type="number"],
+  .sampleCard input[type="date"] {
+    margin-bottom: var(--space-10);
+    padding: var(--space-10) var(--space-12);
+    font-size: var(--font-size-sm);
+  } */
+
+  .addButton {
+    padding: var(--space-10) var(--space-16);
+    font-size: var(--font-size-sm);
+  }
+/* 
+  .addSample,
+  .removeSample {
+    padding: var(--space-8) var(--space-16);
+    font-size: var(--font-size-xs);
+  }
+
+  .inline {
+    gap: var(--space-8);
+  }
+
+  .samples {
+    gap: var(--space-16);
+  } */
 }

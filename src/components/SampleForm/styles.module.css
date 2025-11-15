@@ -1,68 +1,353 @@
+
+
 .samples {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-24);
+  margin-bottom: var(--space-24);
 }
 
 .samplesTitle {
   text-align: center;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 0px;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+  padding-bottom: var(--space-16);
+  border-bottom: 3px solid var(--color-success);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
+/* ==================== SAMPLE CARD ==================== */
+
 .sampleCard {
-  border: 1px solid #dce1e7;
-  border-radius: 12px;
-  padding: 16px;
-  background-color: #f9fbfd;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-20);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.sampleCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .sampleCard h4 {
-  margin-bottom: 12px;
-  color: #1d3557;
+  margin: 0 0 var(--space-16) 0;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: var(--space-12);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .sampleCard select,
 .sampleCard input[type="text"],
 .sampleCard input[type="number"],
 .sampleCard input[type="date"] {
-  margin-bottom: 10px;
-  padding: 6px 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  margin-bottom: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
   width: 100%;
+  font-family: var(--font-family-base);
+  background-color: var(--color-surface);
+  transition: all var(--duration-normal) var(--ease-standard);
+  color: var(--color-text);
 }
+
+.sampleCard select:hover,
+.sampleCard input[type="text"]:hover,
+.sampleCard input[type="number"]:hover,
+.sampleCard input[type="date"]:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.sampleCard select:focus,
+.sampleCard input[type="text"]:focus,
+.sampleCard input[type="number"]:focus,
+.sampleCard input[type="date"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+  background-color: var(--color-surface);
+}
+
+.sampleCard select::placeholder,
+.sampleCard input[type="text"]::placeholder,
+.sampleCard input[type="number"]::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.sampleCard select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: var(--select-caret-light);
+  background-repeat: no-repeat;
+  background-position: right var(--space-12) center;
+  background-size: 16px;
+  padding-right: var(--space-32);
+}
+
+@media (prefers-color-scheme: dark) {
+  .sampleCard select {
+    background-image: var(--select-caret-dark);
+  }
+}
+
+[data-color-scheme="dark"] .sampleCard select {
+  background-image: var(--select-caret-dark);
+}
+
+[data-color-scheme="light"] .sampleCard select {
+  background-image: var(--select-caret-light);
+}
+
+/* ==================== INLINE FIELDS ==================== */
 
 .inline {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: var(--space-12);
+  align-items: flex-start;
 }
 
-.addSample,
-.removeSample {
-  margin-top: 10px;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+.inline > input,
+.inline > select {
+  flex: 1;
+  margin-bottom: var(--space-12);
 }
+
 
 .addSample {
-  background-color: #35b01d;
-}
-.removeSample {
-  background-color: #e63946;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+  padding: var(--space-12) var(--space-24);
+  background-color: var(--color-success);
+  color: var(--color-btn-primary-text);
+  border: none;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 
-.addSample:hover,
+.addSample::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s var(--ease-standard);
+}
+
+.addSample:hover::before {
+  left: 100%;
+}
+
+.addSample:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.addSample:active {
+  background-color: var(--color-primary-active);
+  transform: translateY(0);
+}
+
+.addSample:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.removeSample {
+  margin-top: var(--space-16);
+  padding: var(--space-12) var(--space-24);
+  background-color: var(--color-error);
+  color: var(--color-btn-primary-text);
+  border: none;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--duration-normal) var(--ease-standard);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.removeSample::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s var(--ease-standard);
+}
+
+.removeSample:hover::before {
+  left: 100%;
+}
+
 .removeSample:hover {
-  border: 1px solid;
-  background-color: #fff;
-  color: black
+  background-color: rgba(var(--color-error-rgb), 0.8);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.removeSample:active {
+  background-color: rgba(var(--color-error-rgb), 0.9);
+  transform: translateY(0);
+}
+
+.removeSample:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--color-error-rgb), 0.4);
+}
+
+@media (max-width: 768px) {
+  
+  .sampleCard {
+    padding: var(--space-16);
+  }
+
+  /* .pageTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-24);
+  } */
+
+  /* .actTitle, */
+  .samplesTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-16);
+    padding-bottom: var(--space-12);
+  }
+
+  .inline {
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  .inline > input,
+  .inline > select {
+    flex: 1;
+    width: 100%;
+  }
+
+  /* .addButton {
+    width: 100%;
+    padding: var(--space-12) var(--space-24);
+    font-size: var(--font-size-base);
+  } */
+
+  .addSample,
+  .removeSample {
+    padding: var(--space-10) var(--space-20);
+    font-size: var(--font-size-sm);
+  }
+
+  /* .buttonGroup {
+    flex-direction: column;
+  }
+
+  .buttonGroup .addButton {
+    width: 100%;
+  } */
+}
+
+@media (max-width: 480px) {
+  /* .pageContainer {
+    padding: var(--space-12);
+  }
+
+  .formWrapper {
+    padding: var(--space-16);
+  } */
+
+  /* .form {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    padding: var(--space-12);
+  } */
+
+  .sampleCard {
+    padding: var(--space-12);
+  }
+
+  /* .pageTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-20);
+  } */
+
+  /* .actTitle, */
+  .samplesTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-8);
+  }
+
+  /* .fieldGroup label {
+    font-size: var(--font-size-xs);
+  } */
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  select,
+  textarea {
+    padding: var(--space-10) var(--space-12);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-10);
+  }
+
+  .sampleCard select,
+  .sampleCard input[type="text"],
+  .sampleCard input[type="number"],
+  .sampleCard input[type="date"] {
+    margin-bottom: var(--space-10);
+    padding: var(--space-10) var(--space-12);
+    font-size: var(--font-size-sm);
+  }
+
+  /* .addButton {
+    padding: var(--space-10) var(--space-16);
+    font-size: var(--font-size-sm);
+  } */
+
+  .addSample,
+  .removeSample {
+    padding: var(--space-8) var(--space-16);
+    font-size: var(--font-size-xs);
+  }
+
+  .inline {
+    gap: var(--space-8);
+  }
+
+  .samples {
+    gap: var(--space-16);
+  }
 }

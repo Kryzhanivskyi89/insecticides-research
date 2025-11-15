@@ -24,7 +24,7 @@ const handleSubmitRegistration = async () => {
     const { act, created } = res.data;
     if (!act?._id) throw new Error("Не отримано ID акту");
     alert(created ? "✅ Акт створено!" : "📝 Акт оновлено!");
-    setActId(act._id); // обов'язково зберігаємо ID для подальших дій
+    setActId(act._id); 
     navigate(`/act/${act._id}`);
   } catch (error) {
     console.error("Помилка при збереженні реєстрації:", error);
@@ -33,18 +33,21 @@ const handleSubmitRegistration = async () => {
 };
 
   return (
-    <form>
+    <div className={styles.pageContainer}>
+    <h1 className={styles.pageTitle}>Реєстрація нового акту</h1>
+    <form className={styles.formWrapper}>
       <GeneralInfoForm onChange={setGeneralInfo} />
 
-      <SampleForm onChange={setSamples} />
+        <SampleForm onChange={setSamples} />
 
-      <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
-        <button className={styles.addButton} type="button" onClick={handleSubmitRegistration}>
-          Зареєструвати акт
-        </button>
-      </div>
-
+        <div className={styles.buttonGroup}>
+          <button className={styles.addButton} type="button" onClick={handleSubmitRegistration}>
+            Зареєструвати акт
+          </button>
+        </div>
     </form>
+</div>
+   
   );
 };
 
