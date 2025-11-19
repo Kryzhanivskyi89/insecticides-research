@@ -35,7 +35,6 @@ const Dashboard = () => {
         });
         const data = res.data;
 
-        // Розбиваємо акти по статусах
         const grouped = {
           todo: [],
           inProgress: [],
@@ -57,38 +56,33 @@ const Dashboard = () => {
     fetchActs();
   }, [token]);
 
-  // При перетягуванні картки
   const onDragEnd = async (result) => {
     const { destination, source, draggableId } = result;
 
-    if (!destination) return; // скасовано перетягування
+    if (!destination) return;
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
     )
-      return; // не змінив позицію
+      return; 
 
     const startStatus = source.droppableId;
     const endStatus = destination.droppableId;
 
-    // Копії списків
     const startList = Array.from(actsByStatus[startStatus]);
     const endList = Array.from(actsByStatus[endStatus]);
 
-    // Знайти акт
     const movedActIndex = startList.findIndex((a) => a._id === draggableId);
     const [movedAct] = startList.splice(movedActIndex, 1);
 
     if (startStatus === endStatus) {
-      // Пересування в межах тієї ж колонки
       startList.splice(destination.index, 0, movedAct);
       setActsByStatus((prev) => ({
         ...prev,
         [startStatus]: startList,
       }));
     } else {
-      // Пересування між колонками
-      movedAct.status = endStatus; // оновлюємо статус локально
+      movedAct.status = endStatus;
       endList.splice(destination.index, 0, movedAct);
 
       setActsByStatus((prev) => ({
@@ -97,7 +91,6 @@ const Dashboard = () => {
         [endStatus]: endList,
       }));
 
-      // Оновлюємо бекенд, щоб зберегти новий статус
       try {
         await API.put(
           `/api/acts/${draggableId}`,
@@ -106,7 +99,6 @@ const Dashboard = () => {
         );
       } catch (error) {
         console.error("Помилка оновлення статусу:", error);
-        // В разі помилки, можливо, треба оновити стан назад або показати помилку
       }
     }
   };

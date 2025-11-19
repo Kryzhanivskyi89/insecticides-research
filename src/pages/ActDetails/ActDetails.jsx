@@ -73,7 +73,6 @@ function ActDetails() {
         
         console.log('Fetched data status:', data.status);
 
-        // Виправлено: правильна ініціалізація editableGeneralInfo
         const initialGeneralInfo = {
           actNumber: data.actNumber || "",
           year: data.year || new Date().getFullYear(),
@@ -81,7 +80,7 @@ function ActDetails() {
           receivedDate: data.receivedDate || "",
           transferredBy: data.transferredBy || "",
           executor: data.executor || "",
-          status: data.status || "todo", // Переконайтеся що це правильне значення
+          status: data.status || "todo", 
           description: data.description || ""
         };
         
@@ -138,7 +137,6 @@ function ActDetails() {
     }));
   };
 
-  // Виправлено: правильний обробник зміни загальної інформації
   const handleGeneralInfoChange = useCallback((newGeneralInfo) => {
     console.log('handleGeneralInfoChange called with:', newGeneralInfo);
     console.log('New status:', newGeneralInfo.status);
@@ -190,7 +188,6 @@ function ActDetails() {
       });
       setSaveSuccess(true);
         
-        // Оновлюємо actInfo з новими даними
       setActInfo(prev => ({ 
         ...prev, 
         ...editableGeneralInfo,
@@ -200,7 +197,6 @@ function ActDetails() {
         conclusion: conclusion
       }));
 
-        // Вимикаємо режим редагування
       setEditModes({
         general: false,
         samples: false

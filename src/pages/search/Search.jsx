@@ -8,15 +8,12 @@ import styles from "./styles.module.css";
 
 const API_URL = '/api/acts/search'; 
 
-// Головний компонент сторінки пошуку
 const SearchPage = () => {
-  // Використовуємо один стан для всього пошукового запиту
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Хук для навігації між сторінками
   const navigate = useNavigate();
 
   const handleSearch = async () => {
@@ -25,7 +22,6 @@ const SearchPage = () => {
     setResults([]);
 
     try {
-      // Відправляємо запит з одним параметром 'query'
       const response = await API.get(API_URL, { params: { query: searchTerm } });
       setResults(response.data);
     } catch (e) {
@@ -42,7 +38,6 @@ const SearchPage = () => {
     }
   };
 
-  // Функція для переходу на сторінку з деталями
   const goToActDetails = (actId) => {
     navigate(`/act/${actId}`);
   };
@@ -52,7 +47,6 @@ const SearchPage = () => {
       <div className={styles.searchPageCard}>
         <h1 className={styles.searchTitle}>Пошук актів та зразків</h1>
 
-        {/* Інтерфейс для пошуку */}
         <div className={styles.searchInputGroup}>
           <input
             type="text"
@@ -73,12 +67,10 @@ const SearchPage = () => {
 
         {error && <p className={styles.errorMessage}>{error}</p>}
 
-        {/* Відображення результатів в рядковому форматі */}
         {results.length > 0 ? (
           <div className={styles.resultsList}>
             {results.map((act) => (
               act.samples.map((sample, index) => {
-                // Отримання активності за останній день з activityData
                 const lastActivity = act.activityData && act.activityData.length > 0
                   ? act.activityData[act.activityData.length - 1]
                   : null;
@@ -98,7 +90,6 @@ const SearchPage = () => {
                       <span className={styles.resultText}>{sample.date || '—'}</span>
                     </div>
 
-                    {/* Відображення результату активності в окремому блоці */}
                     <div className={styles.resultActivityBlock}>
                       {lastActivity ? (
                         <p>Результат: {lastActivity.value || '—'}</p>

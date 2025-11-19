@@ -19,5 +19,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
-// basename="/insecticides-research"

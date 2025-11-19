@@ -1,5 +1,3 @@
-
-// src/components/EditableGeneralInfo/EditableGeneralInfo.jsx
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
@@ -15,7 +13,6 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
     description: ""
   });
 
-  // Ініціалізація ОДИН РАЗ
   useEffect(() => {
     if (initialData && Object.keys(initialData).length > 0) {
       setForm({
@@ -29,7 +26,7 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
         description: initialData.description || ""
       });
     }
-  }, []); // Пуста залежність - ініціалізується тільки один раз
+  }, []); 
 
   const handleChange = (field, value) => {
     const updated = { ...form, [field]: value };

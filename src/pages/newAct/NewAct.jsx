@@ -34,20 +34,19 @@ const handleSubmitRegistration = async () => {
 
   return (
     <div className={styles.pageContainer}>
-    <h1 className={styles.pageTitle}>Реєстрація нового акту</h1>
-    <form className={styles.formWrapper}>
-      <GeneralInfoForm onChange={setGeneralInfo} />
+      <h1 className={styles.pageTitle}>Реєстрація нового акту</h1>
+      <form className={styles.formWrapper}>
+        <GeneralInfoForm onChange={setGeneralInfo} />
 
-        <SampleForm onChange={setSamples} />
+          <SampleForm onChange={setSamples} />
 
-        <div className={styles.buttonGroup}>
-          <button className={styles.addButton} type="button" onClick={handleSubmitRegistration}>
-            Зареєструвати акт
-          </button>
-        </div>
-    </form>
-</div>
-   
+          <div className={styles.buttonGroup}>
+            <button className={styles.addButton} type="button" onClick={handleSubmitRegistration}>
+              Зареєструвати акт
+            </button>
+          </div>
+      </form>
+    </div>
   );
 };
 

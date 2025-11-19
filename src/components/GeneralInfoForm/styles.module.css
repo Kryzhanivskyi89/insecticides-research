@@ -137,23 +137,6 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  
-  /* .sampleCard {
-    padding: var(--space-16);
-  } */
-
-  /* .pageTitle {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--space-24);
-  } */
-
-  /* .actTitle, */
-  /* .samplesTitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-16);
-    padding-bottom: var(--space-12);
-  } */
-
   .inline {
     flex-direction: column;
     gap: var(--space-12);
@@ -165,57 +148,15 @@ textarea {
     width: 100%;
   }
 
-  /* .addButton {
-    width: 100%;
-    padding: var(--space-12) var(--space-24);
-    font-size: var(--font-size-base);
-  } */
-
-  /* .addSample,
-  .removeSample {
-    padding: var(--space-10) var(--space-20);
-    font-size: var(--font-size-sm);
-  } */
-
-  /* .buttonGroup {
-    flex-direction: column;
-  }
-
-  .buttonGroup .addButton {
-    width: 100%;
-  } */
 }
 
 @media (max-width: 480px) {
-  /* .pageContainer {
-    padding: var(--space-12);
-  }
-
-  .formWrapper {
-    padding: var(--space-16);
-  } */
 
   .form {
     grid-template-columns: 1fr;
     gap: var(--space-10);
     padding: var(--space-12);
   }
-/* 
-  .sampleCard {
-    padding: var(--space-12);
-  } */
-
-  /* .pageTitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-20);
-  }
-
-  .actTitle,
-  .samplesTitle {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-12);
-    padding-bottom: var(--space-8);
-  } */
 
   .fieldGroup label {
     font-size: var(--font-size-xs);
@@ -230,33 +171,5 @@ textarea {
     font-size: var(--font-size-sm);
     margin-bottom: var(--space-10);
   }
-/* 
-  .sampleCard select,
-  .sampleCard input[type="text"],
-  .sampleCard input[type="number"],
-  .sampleCard input[type="date"] {
-    margin-bottom: var(--space-10);
-    padding: var(--space-10) var(--space-12);
-    font-size: var(--font-size-sm);
-  }
-
-  .addButton {
-    padding: var(--space-10) var(--space-16);
-    font-size: var(--font-size-sm);
-  }
-
-  .addSample,
-  .removeSample {
-    padding: var(--space-8) var(--space-16);
-    font-size: var(--font-size-xs);
-  }
-
-  .inline {
-    gap: var(--space-8);
-  }
-
-  .samples {
-    gap: var(--space-16);
-  } */
 }
 

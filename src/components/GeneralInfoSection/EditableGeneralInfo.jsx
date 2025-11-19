@@ -93,7 +93,6 @@ const EditableGeneralInfo = ({ initialData, onChange }) => {
           value={form.status}
           onChange={(e) => handleChange("status", e.target.value)}
         >
-          {/* Виправлено значення, щоб відповідати логіці канбан-дошки */}
           <option value="todo">До виконання</option>
           <option value="inProgress">В процесі</option>
           <option value="done">Завершено</option>

@@ -1,4 +1,3 @@
-// src/components/EditableSamplesInfo/EditableSamplesInfo.jsx
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
@@ -34,7 +33,6 @@ const units = ["мл", "г"];
 const EditableSamplesInfo = ({ initialSamples = [], onChange }) => {
   const [samples, setSamples] = useState([defaultSample()]);
 
-  // Ініціалізація ОДИН РАЗ
   useEffect(() => {
     if (initialSamples && initialSamples.length > 0) {
       const samplesWithIds = initialSamples.map(sample => ({
@@ -44,9 +42,8 @@ const EditableSamplesInfo = ({ initialSamples = [], onChange }) => {
       }));
       setSamples(samplesWithIds);
     }
-  }, []); // Пуста залежність - ініціалізується тільки один раз
+  }, []);
 
-  // Передаємо зміни вгору при кожній зміні samples
   useEffect(() => {
     onChange(samples);
   }, [samples, onChange]);

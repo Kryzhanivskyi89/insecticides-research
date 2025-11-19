@@ -5,7 +5,6 @@ const ExperimentBlock = ({ title, data, onChange, showConcentration = false, con
   const [blockData, setBlockData] = useState(data);
   const [concentration, setConcentration] = useState(propConcentration || "");
 
-  // Синхронізуємо внутрішній стан з зовнішніми пропсами
   useEffect(() => {
     setBlockData(data);
   }, [data]);
@@ -20,7 +19,6 @@ const ExperimentBlock = ({ title, data, onChange, showConcentration = false, con
     const newData = { ...blockData, before: newBefore };
     setBlockData(newData);
     
-    // Для зразків передаємо дані разом з концентрацією
     if (showConcentration) {
       onChange({ data: newData, concentration });
     } else {
@@ -66,7 +64,6 @@ const ExperimentBlock = ({ title, data, onChange, showConcentration = false, con
   const handleConcentrationChange = (e) => {
     const newConcentration = e.target.value;
     setConcentration(newConcentration);
-    // Передаємо оновлену концентрацію разом з поточними даними
     onChange({ data: blockData, concentration: newConcentration });
   };
 
@@ -83,7 +80,6 @@ const ExperimentBlock = ({ title, data, onChange, showConcentration = false, con
     }
   };
 
-  // Забезпечуємо що data має правильну структуру
   const safeData = {
     before: blockData.before || ["", "", ""],
     days: blockData.days || []

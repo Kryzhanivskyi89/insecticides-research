@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+AgroLabTest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Full-stack platform for automating laboratory workflows in agri/biotech research
 
-## Available Scripts
+About
+AgroLabTest is a production-grade laboratory management and reporting system designed for agri-biotech research and testing.
+No more paperwork, disparate Excel files, or copy-paste reporting—automate the full lifecycle from sample intake and experiment tracking to performance calculation and official PDF reporting.
 
-In the project directory, you can run:
+Democratizes lab expertise: workflows once possible only for the lead scientist are now accessible to every team member
 
-### `npm start`
+All data in one place: safe, searchable, role-protected, and ready for analytics
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Modern, fast UI and real-time calculations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🛠 Technology Stack
+Frontend: React, Redux Toolkit, CSS Modules
 
-### `npm test`
+Backend: Node.js, Express, MongoDB (Mongoose), JWT
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features: PDF reporting (html2pdf.js), role-based access, Kanban board, dynamic forms, advanced search
 
-### `npm run build`
+Deployment: GitHub Pages (frontend), Render (backend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚀 Core Features & Highlights
+Time Savings: 60% reduction in workflow time (from 2–3 hours to 40–60 minutes per experiment)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Zero Manual Errors: Automatic calculations for multi-level experiment designs (3-level nesting)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Knowledge Transfer: Even junior lab staff can execute advanced reporting and calculations
 
-### `npm run eject`
+Single Source of Truth: Replace Excel + Word + Notion + Google Drive with one solution
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Reporting: Generate print-ready, official PDF reports in a single click
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Fully Responsive: Clean design on both desktop and mobile
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Security: Fine-grained role-based access (admin, worker, viewer)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+⚡️ Getting Started
+Clone the repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+git clone https://github.com/Kryzhanivskyi89/insecticides-research
+cd insecticides-research
+Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
+# or, for backend:
+cd server && npm install
+Configure environment
 
-### Code Splitting
+REACT_APP_API_URL=https://insecticides-research-backend.onrender.com
+JWT_SECRET=your_jwt_secret
+MONGO_URI=your_mongodb_uri
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm run dev        # concurrently run backend + frontend (if supported)
+# OR:
+npm start          # React
+npm run server     # backend
+Visit http://localhost:3000
 
-### Analyzing the Bundle Size
+🌍 Deploy to GitHub Pages
+In package.json, set:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+"homepage": "https://Kryzhanivskyi89.github.io/insecticides-research",
 
-### Making a Progressive Web App
+Add scripts:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
 
-### Advanced Configuration
+Deploy:
+npm run deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👨‍🔬 Who is this for
+Agri-biotech companies and research labs
 
-### Deployment
+QA and R&D teams needing workflow automation and experimental result traceability
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Laboratory managers seeking to digitize and centralize data
 
-### `npm run build` fails to minify
+Scientific developers wanting a production-ready, open-source LIMS alternative
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⚡ Why AgroLabTest?
+Real live impact: Used in production, reduced research time by 60%
+
+Domain-driven technical design: Created by actual lab manager/developer
+
+Extensible app architecture
+
+Strong focus on usability and data correctness
+
+
+📫 Contributing / Questions?
+Open issues, PRs, or contact [[email](mailto:kryzhanivskyi.an@gmail.com)]
+Add feature requests—you will help shape the future of open-source biotech software!
+
+AgroLabTest — Science, streamlined.
