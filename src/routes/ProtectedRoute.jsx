@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children, roles = [] }) => {
 
   if (!isAuthenticated) return <Navigate to="/login" />;
 
-  if (roles.length && !roles.includes(role)) return <Navigate to="/unauthorized" />;
+  // if (roles.length && !roles.includes(role)) return <Navigate to="/unauthorized" />;
 
   return children;
 };

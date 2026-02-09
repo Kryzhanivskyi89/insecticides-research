@@ -27,7 +27,7 @@ function App() {
         <Route path="search" element={<Search />} />
       </Route>
 
-      <Route path="/unauthorized" element={<p>⛔ Доступ заборонено</p>} />
+      {/* <Route path="/unauthorized" element={<p>⛔ Доступ заборонено</p>} /> */}
     </Routes>
   );
 }
